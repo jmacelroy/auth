@@ -1,0 +1,7 @@
+build:
+  auth:
+    context: ./
+
+deploy:
+  - name: Install manifests for auth validation service
+    command: cat k8s.yml | envsubst | kubectl apply -f -
